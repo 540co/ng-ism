@@ -1,8 +1,9 @@
-# NgIsmLibrary
+# ng-ism
 
-This is the full project for the `ng-ism` library.  The actual library code can be found in the `projects/ng-ism` folder.
+This library was designed to help increase the integrity of portion marking in Angular projects. 
 
-## Getting Started
+## Installation
+
 ```
 npm install --save ng-ism
 ```
@@ -37,23 +38,6 @@ Use anywhere in your app with the `<ng-ism>` tag.
 - `classification`: string (required) - classification of text to be portion marked (Options: `U`, `R`, `C`, `S`, `TS`).
 - `dissemination`: string (required) - dissemination control of text to be portion marked.
 
-## Local Development
-
-```
-git clone https://github.com/540co/ng-ism.git
-```
-
-Then build the library within the project.
-```
-cd ng-ism
-ng build ng-ism
-```
-
-This will build the library for local development.  You can then run `ng serve` to spin up the demo app and see the library in action. To update 
-the library, you can make edits in the `projects/ng-ism` folder.  This is where the actual library code is kept.
-
-> After making updates you will need to rebuild the library with the `ng build ng-ism` command.  You can leave `ng serve` running if you'd like and 
-hot-reload will pick up the changes when the build is finished.
 
 ## Issues / Feature Requests
 Please use Github for all issues and feature requests.
