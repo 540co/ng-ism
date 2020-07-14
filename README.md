@@ -56,3 +56,4 @@ the library, you can make edits in the `projects/ng-ism` folder.  This is where 
 
 ## Issues / Feature Requests
 Please use Github for all issues and feature requests.
+https://github.com/540co/ng-ism/issues
