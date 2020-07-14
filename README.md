@@ -52,8 +52,7 @@ ng build ng-ism
 This will build the library for local development.  You can then run `ng serve` to spin up the demo app and see the library in action. To update 
 the library, you can make edits in the `projects/ng-ism` folder.  This is where the actual library code is kept.
 
-> After making updates you will need to rebuild the library with the `ng build ng-ism` command.  You can leave `ng serve` running if you'd like and 
-hot-reload will pick up the changes when the build is finished.
+> To have hot reloads while editing the ng-ism library, run `ng build ng-ism --watch` command.  You can leave `ng serve` running if you'd like and hot-reload will pick up the changes when the build is finished.
 
 ## Issues / Feature Requests
 Please use Github for all issues and feature requests.
