@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NgIsmModule } from 'ng-ism'
+import { NgIsmModule } from 'ng-ism';
 
 @NgModule({
   declarations: [
