@@ -1,6 +1,6 @@
 {
   "name": "ng-ism",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "^9.1.12",
     "@angular/core": "^9.1.12"
@@ -9,7 +9,7 @@
     "tslib": "^1.10.0"
   },
   "description": "ECMAScript parser",
-  "homepage": "https://github.com/540co/ng-ism",
+  "homepage": "https://github.com/540co/ng-ism/tree/master/projects/ng-ism",
   "license": "MIT",
   "repository": {
     "type": "git",

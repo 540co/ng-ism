@@ -33,6 +33,7 @@ Use anywhere in your app with the `<ng-ism>` tag.
 ```
 #### Properties
 *NOTE:* All properties are required.
+- `warn`: boolean - set to `true` to blur text for leak or misclassification warnings (default: `false`).
 - `text`: string (required) - the text to be portion marked.
 - `classification`: string (required) - classification of text to be portion marked (Options: `U`, `R`, `C`, `S`, `TS`).
 - `dissemination`: string (required) - dissemination control of text to be portion marked.

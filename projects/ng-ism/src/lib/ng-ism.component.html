@@ -1,5 +1,5 @@
 <div class="ng-ism">
-  <p [ngClass]="{'warning': !textCleared || invalidClassification }">
+  <p [ngClass]="{'warning': (!textCleared || invalidClassification) && warn }">
     <span
       class="marking"
       title="This information is marked as {{ classificationShort }}{{ disseminationParsed }}."
@@ -14,11 +14,11 @@
       ({{ classification }}<span *ngIf="dissemination">//{{ dissemination }}</span>)
     </span>
   </p>
-  <div class="warning-message" *ngIf="!textCleared">
+  <div class="warning-message" *ngIf="!textCleared && warn">
     This text was flagged because may contain text that contradicts the overarching portion marking.  Please ensure this text is marked correctly.<br />
     <button class="ism-button" (click)="showText()">Acknowledge, and show text.</button>
   </div>
-  <div class="invalid-classification-message" *ngIf="invalidClassification">
+  <div class="invalid-classification-message" *ngIf="invalidClassification && warn">
     The classification provided for this portion is not valid.  Please ensure the text is marked properly.<br />
     <button class="ism-button" (click)="showText()">Acknowledge, and show text.</button>
   </div>

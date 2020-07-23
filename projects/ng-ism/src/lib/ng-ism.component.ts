@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'ng-ism', 
+  selector: 'ng-ism',
   templateUrl: './ng-ism.component.html',
   styleUrls: ['./ng-ism.component.scss']
 })
@@ -9,16 +9,17 @@ export class NgIsmComponent implements OnInit {
   @Input() text: string;
   @Input() classification: string;
   @Input() dissemination: string;
+  @Input() warn = false;
   public textCleared = true;
   public invalidClassification = false;
-  public classificationShort: string = '';
-  public disseminationParsed: string = '';
+  public classificationShort = '';
+  public disseminationParsed = '';
 
   private hitList = {
-    U: ["R//", "C//", "S//", "TS//"],
-    R: ["C//", "S//", "TS//"],
-    C: ["S//", "TS//"],
-    S: ["TS//"],
+    U: ['R//', 'C//', 'S//', 'TS//'],
+    R: ['C//', 'S//', 'TS//'],
+    C: ['S//', 'TS//'],
+    S: ['TS//'],
     TS: []
   };
 
@@ -32,8 +33,9 @@ export class NgIsmComponent implements OnInit {
 
   checkText = (text, classification) => {
     let textCleared = true;
-    if (!this.hitList[classification]) this.invalidClassification = true;
-    else {
+    if (!this.hitList[classification]){
+      this.invalidClassification = true;
+    } else {
       this.hitList[classification].forEach(overclass => {
         if (text.includes(overclass)) {
           textCleared = false;
