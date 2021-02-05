@@ -67,13 +67,41 @@ Once your module  is imported, you can use it's components anywhere in your Angu
 <ism-portion-marking warn="" text="" classification="" dissemination=""></ism-portion-marking>
 ```
 
-#### Properties
+## API
 
-*NOTE:* All properties are required.
-- `warn`: boolean - set to `true` to blur text for leak or misclassification warnings (default: `false`).
-- `text`: string (required) - the text to be portion marked.
-- `classification`: string (required) - classification of text to be portion marked (Options: `U`, `R`, `C`, `S`, `TS`).
-- `dissemination`: string (required) - dissemination control of text to be portion marked.
+### `Banner-Line`
+
+#### Inputs
+
+| Input  | Type | Default | Required | Description |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| classification | `string`  | `-` | YES | Set the overall classification level known as the banner line. |
+| classificationColor | `string` | `-` | NO | Set custom color for banner line using valid css color property (hex, rgba, etc.)|
+| [controls] | `Array<string>` |  `-` | NO | Control items for classification |
+| fixedPosition | `top | bottom | none` | `none` | NO | Set a fixed position to top or bottom |
+| height | `string` | `-` | NO | Set custom height of the banner line using valid css height property in px. |
+
+### `Portion-Marking`
+
+#### Inputs
+
+| Input  | Type | Default | Required | Description |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [warn] | `boolean`  | `false` | YES | Set to blur text for leak or misclassification warnings. |
+| text | `string` | `-` | YES | Set cthe text to be portion marked. |
+| classification | `U | R | C | S | TS` |  `-` | YES | Set the classification of the text to be portion marked |
+| dissemination | `string` | `-` | YES | Set the dissemination control of text to be portion marked |
+
+### `Image`
+
+#### Inputs
+
+| Input  | Type | Default | Required | Description |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| src | `boolean`  | `false` | YES | Set image src. |
+| position |`Array<centered | bottomLeft | bottomRight | topLeft | topRight | bottomCentered | topCentered>` | `-` | YES | Set the position of the classification/controls on the image |
+| classification | `U | R | C | S | TS` |  `-` | YES | Set the classification of the image |
+| [controls] | `Array<string>` | `-` | NO | Set the dissemination controls of image |
 
 ---
 
