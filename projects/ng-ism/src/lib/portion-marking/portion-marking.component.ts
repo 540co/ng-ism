@@ -1,15 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'ng-ism',
-  templateUrl: './ng-ism.component.html',
-  styleUrls: ['./ng-ism.component.scss']
+  selector: 'ism-portion-marking',
+  templateUrl: './portion-marking.component.html',
+  styleUrls: ['./portion-marking.component.scss']
 })
-export class NgIsmComponent implements OnInit {
+export class PortionMarkingComponent implements OnInit {
   @Input() text: string;
   @Input() classification: string;
-  @Input() dissemination: string;
+  @Input() dissemination = '';
   @Input() warn = false;
+  @Input() isDeclassified = false;
+  @Input() tag = false;
+  @Input() wrapped = true;
   public textCleared = true;
   public invalidClassification = false;
   public classificationShort = '';
@@ -20,7 +23,9 @@ export class NgIsmComponent implements OnInit {
     R: ['C//', 'S//', 'TS//'],
     C: ['S//', 'TS//'],
     S: ['TS//'],
-    TS: []
+    TS: [],
+    CUI: [],
+    'TS//SCI': []
   };
 
   constructor() { }
@@ -62,6 +67,8 @@ export class NgIsmComponent implements OnInit {
         return 'SECRET';
       case 'TS':
         return 'TOP SECRET';
+      case 'TSSCI':
+        return 'TOP SECRET//SCI';
       default:
         return classification;
     }
@@ -88,6 +95,19 @@ export class NgIsmComponent implements OnInit {
     }
   };
 
+  /*
+  - Portion marks shall include any control markings applicable to the portion (see Figure 2).
+Within the portion marking, double forward slashes (//) shall separate classification and control
+markings. Single forward slashes (/) shall separate multiple control markings within the same
+category (see Enclosure 4, section 1). Hyphens (-) are used to separate control markings and
+their sub-controls. If multiple control markings are used, they are listed in the order in which
+they appear in Enclosure 4.
+
+  - Portion markings always use uppercase letters and are enclosed in parentheses.
+
+
+  DECLASSIFICATION (Strike-through)
+  */
   parseDissemination = (dissemination) => {
     const controlArray = [];
     const breakClass = dissemination.split('//');

@@ -1,0 +1,10 @@
+<div class="container">
+    <img [attr.src]="src" alt="Snow" style="width:100%;">
+    <div *ngIf="position.includes('bottomLeft')" class="bottom-left">{{bannerText}}</div>
+    <div *ngIf="position.includes('topLeft')" class="top-left">{{bannerText}}</div>
+    <div *ngIf="position.includes('topRight')" class="top-right">{{bannerText}}</div>
+    <div *ngIf="position.includes('bottomRight')" class="bottom-right">{{bannerText}}</div>
+    <div *ngIf="position.includes('centered')" class="centered">{{bannerText}}</div>
+    <div *ngIf="position.includes('topCentered')" class="top-centered">{{bannerText}}</div>
+    <div *ngIf="position.includes('bottomCentered')" class="bottom-centered">{{bannerText}}</div>
+</div>

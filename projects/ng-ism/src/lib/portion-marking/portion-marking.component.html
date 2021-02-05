@@ -1,15 +1,20 @@
 <div class="ng-ism">
-  <p [ngClass]="{'warning': (!textCleared || invalidClassification) && warn }">
+  <p [ngClass]="{'warning': (!textCleared || invalidClassification) && warn}">
     <span
       class="marking"
+      [className]="tag ? classification : ''"
       title="This information is marked as {{ classificationShort }}{{ disseminationParsed }}."
+      [ngClass]="{'warning': (!textCleared || invalidClassification) && warn, 'strike': isDeclassified, 'tag': tag }"
     >
       ({{ classification }}<span *ngIf="dissemination">//{{ dissemination }}</span>)
     </span>
-    {{ text }}
+    {{ text }} {{wrapped}}
     <span
+      *ngIf="wrapped"
       class="marking"
+      [className]="tag ? classification : ''"
       title="This information is marked as {{ classificationShort }}{{ disseminationParsed }}."
+      [ngClass]="{'strike': isDeclassified, 'tag': tag}"
     >
       ({{ classification }}<span *ngIf="dissemination">//{{ dissemination }}</span>)
     </span>

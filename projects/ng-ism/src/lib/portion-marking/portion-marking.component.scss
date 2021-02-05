@@ -1,0 +1,97 @@
+$classificationTopSecretSCIBackgroundColor: rgba(252,232,58);
+$classificationTopSecretBackgroundColor: rgba(255,140,0);
+$classificationSecretBackgroundColor: rgba(200,16,46);
+$classificationConfidentialBackgroundColor: rgba(0,51,160);
+$classificationControlledBackgroundColor: rgba(80,43,133);
+$classificationUnclassifiedBackgroundColor: rgba(0,122,51);
+
+.marking {
+  font-weight: bold;
+  cursor: help;
+}
+
+.warning {
+  color: #222222;
+  filter: blur(5px);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.warning-message, .invalid-classification-message {
+  text-align: center;
+  button {
+    margin: 1em 0em;
+    color: #fff;
+    background-color: #d83933;
+    border-radius: .25rem;
+    font-weight: 700;
+    margin-right: .5rem;
+    padding: .75rem 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    &:hover {
+      background-color: #b50909;
+      cursor: pointer;
+    }
+  }
+}
+
+.tag {
+  display: inline-block;
+  padding: .25em 1em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  color: #fff;
+  background-color: #6c757d;
+  letter-spacing: .5px;
+}
+
+.strike {
+  position: relative;
+  display: inline-block;
+}
+
+.strike::before {
+  content: '';
+  border-bottom: 3px solid black;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 1.5px);
+}
+
+.TSSCI {
+  background-color: $classificationTopSecretSCIBackgroundColor;
+  color: #000 !important; 
+}
+
+.TS {
+  background-color: $classificationTopSecretBackgroundColor;
+  color: #000 !important; 
+}
+
+.S {
+  background-color: $classificationSecretBackgroundColor;
+}
+
+.C {
+  background-color: $classificationConfidentialBackgroundColor;
+}
+
+.CUI {
+  background-color: $classificationControlledBackgroundColor;
+}
+
+.U {
+  background-color: $classificationUnclassifiedBackgroundColor;
+}

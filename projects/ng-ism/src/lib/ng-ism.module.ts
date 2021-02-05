@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgIsmComponent } from './ng-ism.component';
-
-
+import { BannerLineModule } from './banner-line/banner-line.module';
+import { PortionMarkingModule } from './portion-marking/portion-marking.module';
+import { ImageModule } from './image/image.module';
 
 @NgModule({
-  declarations: [NgIsmComponent],
-  imports: [
-    BrowserModule
-  ],
-  exports: [NgIsmComponent]
+  declarations: [],
+  imports: [BannerLineModule, PortionMarkingModule, ImageModule],
+  exports: [BannerLineModule, PortionMarkingModule, ImageModule],
 })
-export class NgIsmModule { }
+export class NgIsmModule {}

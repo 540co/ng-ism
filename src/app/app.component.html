@@ -1,10 +1,109 @@
-<div>
-  <ng-ism
-    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates sed expedita at assumenda ad quod repellat dolorem sint! Eaque maiores velit odio delectus harum iusto explicabo amet, quia id."
+<div class="app-container">
+  <section>
+    <h1>Example Portion Markings</h1>
+  
+    <ism-portion-marking
+    text="Example text this is sensitive"
     classification="U"
-    dissemination=""
     warn="true"
-  >
-  </ng-ism>
+    >
+    </ism-portion-marking>
+  
+    <ism-portion-marking
+    text="Example text this is sensitive with dissemination controls"
+    classification="U"
+    warn="true"
+    dissemination="FOUO"
+    >
+    </ism-portion-marking>
+  
+    <ism-portion-marking
+    text="Example text this is declassified markings"
+    classification="U"
+    warn="true"
+    dissemination="FOUO"
+    isDeclassified="true"
+    >
+    </ism-portion-marking>
+
+    <ism-portion-marking
+    text="Example text this is sensitive with TAGZ"
+    classification="U"
+    warn="true"
+    dissemination="FOUO"
+    tag="true"
+    >
+    </ism-portion-marking>
+
+    <ism-portion-marking
+    text="Example text this is sensitive with TAGZ"
+    classification="C"
+    warn="true"
+    tag="true"
+    >
+  </ism-portion-marking>
+
+    <ism-portion-marking
+    text="Example text this is sensitive with TAGZ"
+    classification="S"
+    warn="true"
+    tag="true"
+    >
+  </ism-portion-marking>
+
+    <ism-portion-marking
+    text="Example text this is sensitive with TAGZ"
+    classification="TS"
+    warn="true"
+    tag="true"
+    >
+    </ism-portion-marking>
+
+    <ism-portion-marking
+    text="Example text this is sensitive with TAGZ"
+    classification="CUI"
+    warn="true"
+    tag="true"
+    [wrapped]="false"
+    >
+    </ism-portion-marking>
+
+    <ism-portion-marking
+    text="Example text this is sensitive with TAGZ"
+    classification="TS//SCI"
+    warn="true"
+    tag="true"
+    [wrapped]="false"
+    >
+    </ism-portion-marking>
+  </section>
+  <section>
+    <h1>Example Banner Lines</h1>
+    
+    <ism-banner-line classification="unclassified" fixedPosition="top"></ism-banner-line>
+    <ism-banner-line classification="unclassified" fixedPosition="bottom"></ism-banner-line>
+
+    <ism-banner-line classification="unclassified"></ism-banner-line>
+    <ism-banner-line classification="controlled"></ism-banner-line>
+    <ism-banner-line classification="confidential"></ism-banner-line>
+    <ism-banner-line classification="secret"></ism-banner-line>
+    <ism-banner-line classification="topsecret"></ism-banner-line>
+    <ism-banner-line classification="topsecretsci"></ism-banner-line>
+    <ism-banner-line classification="custom" classificationColor="pink"></ism-banner-line>
+
+
+  </section>
+
+  <section>
+    <h1>Example Image</h1>
+    
+    <div style="width:500px; margin-bottom: 50px;">
+      <ism-image src="https://media.socastsrm.com/wordpress/wp-content/blogs.dir/835/files/2019/03/Big-Foot-927387.jpg" classification="unclassified" position="bottomCentered"></ism-image>
+      <ism-image src="https://cdn.images.express.co.uk/img/dynamic/80/590x/ATLANTIS-may-have-been-uncovered-and-it-was-hiding-off-the-coast-of-Britain-all-along-according-to-the-claims-of-a-historian-1228892.webp?r=1579206218048" classification="unclassified" position="topLeft"></ism-image>
+      <ism-image src="https://s01.sgp1.cdn.digitaloceanspaces.com/article/123997-njkqfcwqje-1563359614.jpeg" classification="topsecret" [position]="['bottomCentered', 'topCentered']" [controls]="['FOUO']"></ism-image>
+    </div>
+
+
+  </section>
 </div>
 <router-outlet></router-outlet>
