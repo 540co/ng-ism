@@ -1,7 +1,25 @@
 * {
-    font-family: 'source-sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+$primary: #003366;
+
+h1, h2, h3, h4, h5, h6 {
+    color: $primary
 }
 
 .app-container {
     margin-top: 50px;
+    padding: 0 100px;
 }
+
+.image-container {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .image {
+        width: 500px;
+    }
+}
+

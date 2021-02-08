@@ -93,21 +93,8 @@ export class PortionMarkingComponent implements OnInit {
           return control;
       }
     }
-  };
+  }
 
-  /*
-  - Portion marks shall include any control markings applicable to the portion (see Figure 2).
-Within the portion marking, double forward slashes (//) shall separate classification and control
-markings. Single forward slashes (/) shall separate multiple control markings within the same
-category (see Enclosure 4, section 1). Hyphens (-) are used to separate control markings and
-their sub-controls. If multiple control markings are used, they are listed in the order in which
-they appear in Enclosure 4.
-
-  - Portion markings always use uppercase letters and are enclosed in parentheses.
-
-
-  DECLASSIFICATION (Strike-through)
-  */
   parseDissemination = (dissemination) => {
     const controlArray = [];
     const breakClass = dissemination.split('//');

@@ -10,7 +10,7 @@
     </ism-portion-marking>
   
     <ism-portion-marking
-    text="Example text this is sensitive with dissemination controls"
+    text="Example text with dissemination controls"
     classification="U"
     warn="true"
     dissemination="FOUO"
@@ -18,7 +18,7 @@
     </ism-portion-marking>
   
     <ism-portion-marking
-    text="Example text this is declassified markings"
+    text="Example text with declassified markings"
     classification="U"
     warn="true"
     dissemination="FOUO"
@@ -27,7 +27,7 @@
     </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text this is sensitive with TAGZ"
+    text="Example text with markings as tags"
     classification="U"
     warn="true"
     dissemination="FOUO"
@@ -36,7 +36,7 @@
     </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text this is sensitive with TAGZ"
+    text="Example text with markings as tags"
     classification="C"
     warn="true"
     tag="true"
@@ -44,7 +44,7 @@
   </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text this is sensitive with TAGZ"
+    text="Example text with markings as tags"
     classification="S"
     warn="true"
     tag="true"
@@ -52,7 +52,7 @@
   </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text this is sensitive with TAGZ"
+    text="Example text with markings as tags"
     classification="TS"
     warn="true"
     tag="true"
@@ -60,7 +60,7 @@
     </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text this is sensitive with TAGZ"
+    text="Example text with markings as tags and no wrap"
     classification="CUI"
     warn="true"
     tag="true"
@@ -69,7 +69,7 @@
     </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text this is sensitive with TAGZ"
+    text="Example text with markings as tags and no wrap"
     classification="TS//SCI"
     warn="true"
     tag="true"
@@ -90,20 +90,16 @@
     <ism-banner-line classification="topsecret"></ism-banner-line>
     <ism-banner-line classification="topsecretsci"></ism-banner-line>
     <ism-banner-line classification="custom" classificationColor="pink"></ism-banner-line>
-
-
   </section>
 
   <section>
-    <h1>Example Image</h1>
+    <h1>Example Images</h1>
     
-    <div style="width:500px; margin-bottom: 50px;">
-      <ism-image src="https://media.socastsrm.com/wordpress/wp-content/blogs.dir/835/files/2019/03/Big-Foot-927387.jpg" classification="unclassified" position="bottomCentered"></ism-image>
-      <ism-image src="https://cdn.images.express.co.uk/img/dynamic/80/590x/ATLANTIS-may-have-been-uncovered-and-it-was-hiding-off-the-coast-of-Britain-all-along-according-to-the-claims-of-a-historian-1228892.webp?r=1579206218048" classification="unclassified" position="topLeft"></ism-image>
-      <ism-image src="https://s01.sgp1.cdn.digitaloceanspaces.com/article/123997-njkqfcwqje-1563359614.jpeg" classification="topsecret" [position]="['bottomCentered', 'topCentered']" [controls]="['FOUO']"></ism-image>
+    <div class="image-container">
+      <ism-image class="image" src="https://media.socastsrm.com/wordpress/wp-content/blogs.dir/835/files/2019/03/Big-Foot-927387.jpg" classification="unclassified" position="bottomCentered"></ism-image>
+      <ism-image class="image" src="https://cdn.images.express.co.uk/img/dynamic/80/590x/ATLANTIS-may-have-been-uncovered-and-it-was-hiding-off-the-coast-of-Britain-all-along-according-to-the-claims-of-a-historian-1228892.webp?r=1579206218048" classification="unclassified" position="topLeft"></ism-image>
+      <ism-image class="image" src="https://s01.sgp1.cdn.digitaloceanspaces.com/article/123997-njkqfcwqje-1563359614.jpeg" classification="topsecret" [position]="['bottomCentered', 'topCentered']" [controls]="['FOUO']"></ism-image>
     </div>
-
-
   </section>
 </div>
 <router-outlet></router-outlet>

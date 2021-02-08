@@ -1,60 +1,125 @@
-# NgIsmLibrary
+# ng-ism
 
-This is the full project for the `ng-ism` library.  The actual library code can be found in the `projects/ng-ism` folder.
+This library was designed to help increase the integrity of classification and control markings that are required for digital products created for government clients who interact with classified or controlled information in Angular projects.
 
-## Getting Started
+![](https://media.giphy.com/media/TL5XQpSpASo4U/giphy.gif)
+
+> :warning: All data contained within this repo (including this file) in **UNCLASSIFIED**. All classification and control markings on this page are for illustration purposes only.
+
+## Features
+
+**Automatic Portion Marking**
+
+Just provide the text, classification, and any dissemination controls and the library will properly portion mark the section of text.
+
+**Leak Detection**
+
+Ng-ism does a quick check on the text provided to ensure there isn't anything included that might supersede the provided portion marking. If it finds something, it will blur the text until the user acknowledges a warning.
+> To use this feature set the `warn` input to true.
+
+**Translation**
+
+Security marking can be hard to understand.  Ng-ism helps by providing translations on many popular abbreviations in security markings.  Users can see these translations by hovering over the portion markings. (Uses native HTML tooltips).
+
+## Installation
+
+Install through npm:
+
+```bash
+npm install ng-ism --save
 ```
-npm install --save ng-ism
-```
 
-Import the library into your project (usually `app.module`) and include it in the module `imports` section.
+Import the NgIsmModule into your Angular application's module Your application's main module might look  like this:
 
-```
-import { NgIsmModule } from 'ng-ism'    <----- Import here
-...
+```js
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgIsmModule } from 'ng-ism'
+import { AppComponent } from './app.component';
+
 @NgModule({
-  ...
   imports: [
+    BrowserModule
+    NgIsmModule
     ...
-    NgIsmModule                         <----- and here
-    ...
-  ]
-  ...
+  ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
-## Usage
+Alternatively you can only import (sub)modules with components you need. For example if you only want to use the `<ism-banner-line>` component, you can import just `BannerLineModule` instead of `NgIsmModule`. This resulting bundle will be smaller in this case.
 
-Use anywhere in your app with the `<ng-ism>` tag.
+Once your module is imported, you can use it's components anywhere in your Angular application:
 
+```html
+<!-- Example implementation -->
+<ism-portion-marking text="Area 51 Coordinates" classification="TS" dissemination=""></ism-portion-marking>
 ```
-<ng-ism text="" classification="" dissemination=""></ng-ism>
-```
-#### Properties
-*NOTE:* All properties are required.
-- `warn`: boolean - set to `true` to blur text for leak or misclassification warnings (default: `false`).
-- `text`: string (required) - the text to be portion marked.
-- `classification`: string (required) - classification of text to be portion marked (Options: `U`, `R`, `C`, `S`, `TS`).
-- `dissemination`: string (required) - dissemination control of text to be portion marked.
+
+## API
+
+Available components.
+
+### `Banner-Line`
+
+Banner lines are used to provide a visual representation of the overall classification of data displayed in the application. A banner line can be used inline or fixed depending on usage and could vary in size.
+
+#### Inputs
+
+| Property  | Type | Default | Description |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| classification | `U \| R \| C \| S \| TS`  | `-` | Set the overall classification level known as the banner line. It can be either `U`, `R`, `C`, `S`, or `TS`|
+| classificationColor | `string` | `-`  | Set custom color for banner line using valid css color property (hex, rgba, etc.)|
+| [controls] | `Array<string>` |  `-`  | Control items for classification |
+| fixedPosition | `string`  | Set a fixed position of the classification banner. It can be either `top` or `bottom` |
+| height | `string` | `-` | Set custom height of the banner line using valid css height property in px. |
+
+### `Portion-Marking`
+
+A portion marking represents and object that is marked to clearly convey the level of classification assigned, the portions that contain or reveal classified information.
+
+#### Inputs
+
+| Property  | Type | Default | Description |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [warn] | `boolean`  | `false` | Set to blur text for leak or misclassification warnings. |
+| text | `string` | `-` | Set the text to be portion marked. |
+| classification | `U \| R \| C \| S \| TS` |  `-` | Set the classification of the text to be portion marked. It can be either `U`, `R`, `C`, `S`, or `TS` |
+| dissemination | `string` | `-`  | Set the dissemination control of text to be portion marked |
+
+### `Image`
+
+An image represents an image that is marked to clearly convey the level of classification assigned, the image that contain or reveal classified information.
+
+#### Inputs
+
+| Property  | Type | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| src | `boolean`  | `false` | Set image src. |
+| position |`Array<string>` | `-`  | Set the position of the classification/controls on the image. It can be either `centered`, `bottomLeft`, `bottomRight`, `topLeft`, `topRight`, `bottomCentered`, or `topCentered` |
+| classification | `U, R, C, S, TS` |  `-` | Set the classification of the image. It can be either `U`, `R`, `C`, `S`, or `TS` |
+| [controls] | `Array<string>` | `-` | Set the dissemination controls of image |
 
 ## Local Development
 
-```
+Clone repo.
+
+```bash
 git clone https://github.com/540co/ng-ism.git
 ```
 
 Then build the library within the project.
-```
-cd ng-ism
+
+```bash
 ng build ng-ism
 ```
 
-This will build the library for local development.  You can then run `ng serve` to spin up the demo app and see the library in action. To update 
-the library, you can make edits in the `projects/ng-ism` folder.  This is where the actual library code is kept.
+This will build the library for local development.  You can then run `ng serve` to spin up the demo app and see the library in action. To update the library, you can make edits in the `projects/ng-ism` folder.  This is where the actual library code is kept.
 
 > To have hot reloads while editing the ng-ism library, run `ng build ng-ism --watch` command.  You can leave `ng serve` running if you'd like and hot-reload will pick up the changes when the build is finished.
 
 ## Issues / Feature Requests
-Please use Github for all issues and feature requests.
-https://github.com/540co/ng-ism/issues
+
+Please use [Github](https://github.com/540co/ng-ism/issues) for all issues and feature requests.
