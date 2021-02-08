@@ -29,7 +29,7 @@ Install through npm:
 npm install ng-ism --save
 ```
 
-Import the NgIsmModule into your Angular application's module Your application's main module might look  like this:
+Import the NgIsmModule into your Angular application's module Your application's main module might look like this:
 
 ```js
 import { NgModule } from '@angular/core';
@@ -110,15 +110,31 @@ Clone repo.
 git clone https://github.com/540co/ng-ism.git
 ```
 
-Then build the library within the project.
+Then build the library within the project. This will build the library for local development.
 
 ```bash
-ng build ng-ism
+npm run lib:build
 ```
 
-This will build the library for local development.  You can then run `ng serve` to spin up the demo app and see the library in action. To update the library, you can make edits in the `projects/ng-ism` folder.  This is where the actual library code is kept.
+Run demo app locally
 
-> To have hot reloads while editing the ng-ism library, run `ng build ng-ism --watch` command.  You can leave `ng serve` running if you'd like and hot-reload will pick up the changes when the build is finished.
+```bash
+npm run start
+```
+
+Alternatively, You can then run `ng serve` to spin up the demo app and see the library in action. To update the library, you can make edits in the `projects/ng-ism` folder.  This is where the actual library code is kept.
+
+```bash
+npm run lib:watch
+```
+
+> This enables hot reloads while editing the ng-ism library. You can leave `ng serve` running if you'd like and hot-reload will pick up the changes when the build is finished.
+
+To test the library components.
+
+```bash
+npm run test
+```
 
 ## Issues / Feature Requests
 

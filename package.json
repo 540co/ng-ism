@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "lib:build": "ng build ng-ism --prod",
+    "lib:watch": "ng build ng-ism --watch",
+    "test": "ng test ng-ism --watch=false --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
