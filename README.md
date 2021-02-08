@@ -70,7 +70,7 @@ Banner lines are used to provide a visual representation of the overall classifi
 
 | Property  | Type | Default | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| classification | `U \| R \| C \| S \| TS`  | `-` | Set the overall classification level known as the banner line. It can be either `U`, `R`, `C`, `S`, or `TS` |
+| classification | `string`  | `-` | Set the overall classification level known as the banner line. It can be either `controlled`, `unclassified`, `restricted`, `confidential`, `secret`, `topsecret`, or `topsecretsci` |
 | classificationColor | `string` | `-`  | Set custom color for banner line using valid css color property (hex, rgba, etc.) |
 | [controls] | `Array<string>` |  `-`  | Control items for classification |
 | fixedPosition | `string` | `-` | Set a fixed position of the classification banner. It can be either `top` or `bottom` |
@@ -86,7 +86,7 @@ A portion marking represents and object that is marked to clearly convey the lev
 | ------------- | ------------- | ------------- | ------------- |
 | [warn] | `boolean`  | `false` | Set to blur text for leak or misclassification warnings. |
 | text | `string` | `-` | Set the text to be portion marked. |
-| classification | `U \| R \| C \| S \| TS` |  `-` | Set the classification of the text to be portion marked. It can be either `U`, `R`, `C`, `S`, or `TS` |
+| classification | `string` |  `-` | Set the classification of the text to be portion marked. It can be either `U`, `R`, `C`, `S`, or `TS` |
 | dissemination | `string` | `-`  | Set the dissemination control of text to be portion marked |
 
 ### `Image`
@@ -99,7 +99,7 @@ An image represents an image that is marked to clearly convey the level of class
 | ------------- | ------------- | ------------- | ------------- |
 | src | `boolean`  | `false` | Set image src. |
 | position |`Array<string>` | `-`  | Set the position of the classification/controls on the image. It can be either `centered`, `bottomLeft`, `bottomRight`, `topLeft`, `topRight`, `bottomCentered`, or `topCentered` |
-| classification | `U, R, C, S, TS` |  `-` | Set the classification of the image. It can be either `U`, `R`, `C`, `S`, or `TS` |
+| classification | `string` |  `-` | Set the classification of the image. It can be either `controlled`, `unclassified`, `restricted`, `confidential`, `secret`, `topsecret`, or `topsecretsci` |
 | [controls] | `Array<string>` | `-` | Set the dissemination controls of image |
 
 ## Local Development
