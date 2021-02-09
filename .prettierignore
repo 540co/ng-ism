@@ -1,0 +1,6 @@
+dist
+build
+coverage
+node_modules
+package.json
+README.md

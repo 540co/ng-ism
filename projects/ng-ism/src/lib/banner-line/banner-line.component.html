@@ -1,6 +1,8 @@
 <div
   class="banner-line"
   [className]="classification"
-  [ngStyle]="{'background-color': classificationColor, 'height.px': height }"
-  [ngClass]="{'fixed-bottom': fixedPosition === 'bottom', 'fixed-top': fixedPosition === 'top'}"
-  >{{bannerText}}</div>
+  [ngStyle]="{ 'background-color': classificationColor, 'height.px': height }"
+  [ngClass]="{ 'fixed-bottom': fixedPosition === 'bottom', 'fixed-top': fixedPosition === 'top' }"
+>
+  {{ bannerText }}
+</div>

@@ -5,7 +5,7 @@ export enum ClassificationLevel {
   restricted = 'RESTRICTED',
   controlled = 'CONTROLLED (CUI)',
   unclassified = 'UNCLASSIFIED',
-  confidential = 'CONFIDENTIAL'
+  confidential = 'CONFIDENTIAL',
 }
 
 export function deriveClassification(classification: string) {
@@ -32,8 +32,7 @@ export function deriveClassification(classification: string) {
 export function formatBannerText(classification: string, controls: string[]) {
   const SEPARATOR = '//';
 
-  return (controls.length > 0) ?
-    `${classification}${SEPARATOR}${controls.join('/')}`.toUpperCase() :
-    `${classification}`.toUpperCase();
+  return controls.length > 0
+    ? `${classification}${SEPARATOR}${controls.join('/')}`.toUpperCase()
+    : `${classification}`.toUpperCase();
 }
-

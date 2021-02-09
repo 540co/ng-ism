@@ -4,12 +4,19 @@ import { deriveClassification, formatBannerText } from './../core/utils';
 @Component({
   selector: 'ism-image',
   templateUrl: './image.component.html',
-  styleUrls: ['./image.component.scss']
+  styleUrls: ['./image.component.scss'],
 })
 export class ImageComponent implements OnInit {
-
   @Input() src: string;
-  @Input() position: ('centered' | 'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight' | 'bottomCentered' | 'topCentered')[] = [];
+  @Input() position: (
+    | 'centered'
+    | 'bottomLeft'
+    | 'bottomRight'
+    | 'topLeft'
+    | 'topRight'
+    | 'bottomCentered'
+    | 'topCentered'
+  )[] = [];
   @Input() classification: string;
   @Input() controls?: string[] = [];
 

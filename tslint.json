@@ -25,7 +25,6 @@
     "component-selector": [
       true,
       "element",
-      "app",
       "kebab-case"
     ],
     "eofline": true,
@@ -40,10 +39,6 @@
       ]
     },
     "max-classes-per-file": false,
-    "max-line-length": [
-      true,
-      140
-    ],
     "member-ordering": [
       true,
       {

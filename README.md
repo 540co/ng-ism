@@ -96,7 +96,7 @@ An image represents an image that is marked to clearly convey the level of class
 #### Inputs
 
 | Property  | Type | Default  | Description |
-| ------------- | ------------- | ------------- | ------------- |
+| --------- | ---- | -------- | ----------- |
 | src | `boolean`  | `false` | Set image src. |
 | position |`Array<string>` | `-`  | Set the position of the classification/controls on the image. It can be either `centered`, `bottomLeft`, `bottomRight`, `topLeft`, `topRight`, `bottomCentered`, or `topCentered` |
 | classification | `string` |  `-` | Set the classification of the image. It can be either `controlled`, `unclassified`, `restricted`, `confidential`, `secret`, `topsecret`, or `topsecretsci` |

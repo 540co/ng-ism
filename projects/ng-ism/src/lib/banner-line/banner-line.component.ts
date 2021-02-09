@@ -4,10 +4,9 @@ import { deriveClassification, formatBannerText } from './../core/utils';
 @Component({
   selector: 'ism-banner-line',
   templateUrl: './banner-line.component.html',
-  styleUrls: ['./banner-line.component.scss']
+  styleUrls: ['./banner-line.component.scss'],
 })
 export class BannerLineComponent implements OnInit {
-
   @Input() classification: string;
   @Input() classificationColor?: string;
   @Input() controls?: string[] = [];

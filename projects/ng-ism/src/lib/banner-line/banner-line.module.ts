@@ -4,9 +4,7 @@ import { BannerLineComponent } from './banner-line.component';
 
 @NgModule({
   declarations: [BannerLineComponent],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [BannerLineComponent],
 })
-export class BannerLineModule { }
+export class BannerLineModule {}

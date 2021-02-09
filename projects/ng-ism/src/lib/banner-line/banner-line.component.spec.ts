@@ -8,9 +8,8 @@ describe('BannerLineComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BannerLineComponent ]
-    })
-    .compileComponents();
+      declarations: [BannerLineComponent],
+    }).compileComponents();
     fixture = TestBed.createComponent(BannerLineComponent);
     component = fixture.componentInstance;
   }));
@@ -52,7 +51,7 @@ describe('BannerLineComponent', () => {
     fixture.detectChanges();
 
     expect(component.bannerText).toEqual(expectedBannerText);
-    expect(bannerLine.textContent).toEqual(expectedBannerText);
+    expect(bannerLine.textContent).toContain(expectedBannerText);
   });
 
   it('should correctly render UNCLASSIFIED classification', () => {
@@ -63,7 +62,7 @@ describe('BannerLineComponent', () => {
     fixture.detectChanges();
 
     expect(component.bannerText).toEqual(expectedBannerText);
-    expect(bannerLine.textContent).toEqual(expectedBannerText);
+    expect(bannerLine.textContent).toContain(expectedBannerText);
   });
 
   it('should correctly render RESTRICTED classification', () => {
@@ -74,7 +73,7 @@ describe('BannerLineComponent', () => {
     fixture.detectChanges();
 
     expect(component.bannerText).toEqual(expectedBannerText);
-    expect(bannerLine.textContent).toEqual(expectedBannerText);
+    expect(bannerLine.textContent).toContain(expectedBannerText);
   });
 
   it('should correctly render CONFIDENTIAL classification', () => {
@@ -85,7 +84,7 @@ describe('BannerLineComponent', () => {
     fixture.detectChanges();
 
     expect(component.bannerText).toEqual(expectedBannerText);
-    expect(bannerLine.textContent).toEqual(expectedBannerText);
+    expect(bannerLine.textContent).toContain(expectedBannerText);
   });
 
   it('should correctly render SECRET classification', () => {
@@ -96,7 +95,7 @@ describe('BannerLineComponent', () => {
     fixture.detectChanges();
 
     expect(component.bannerText).toEqual(expectedBannerText);
-    expect(bannerLine.textContent).toEqual(expectedBannerText);
+    expect(bannerLine.textContent).toContain(expectedBannerText);
   });
 
   it('should correctly render TOP SECRET classification', () => {
@@ -107,18 +106,18 @@ describe('BannerLineComponent', () => {
     fixture.detectChanges();
 
     expect(component.bannerText).toEqual(expectedBannerText);
-    expect(bannerLine.textContent).toEqual(expectedBannerText);
+    expect(bannerLine.textContent).toContain(expectedBannerText);
   });
 
   it('should correctly render TOP SECRET//SCI classification', () => {
     const expectedBannerText = 'TOP SECRET//SCI';
-    const bannerLine = fixture.debugElement.nativeElement.querySelector('.banner-line');  
+    const bannerLine = fixture.debugElement.nativeElement.querySelector('.banner-line');
 
     component.classification = 'topsecretsci';
     fixture.detectChanges();
 
     expect(component.bannerText).toEqual(expectedBannerText);
-    expect(bannerLine.textContent).toEqual(expectedBannerText);
+    expect(bannerLine.textContent).toContain(expectedBannerText);
   });
 
   it('should correctly set fixed position', () => {

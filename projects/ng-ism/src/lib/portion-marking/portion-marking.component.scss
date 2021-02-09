@@ -1,9 +1,9 @@
-$classificationTopSecretSCIBackgroundColor: rgba(252,232,58);
-$classificationTopSecretBackgroundColor: rgba(255,140,0);
-$classificationSecretBackgroundColor: rgba(200,16,46);
-$classificationConfidentialBackgroundColor: rgba(0,51,160);
-$classificationControlledBackgroundColor: rgba(80,43,133);
-$classificationUnclassifiedBackgroundColor: rgba(0,122,51);
+$classificationTopSecretSCIBackgroundColor: rgba(252, 232, 58);
+$classificationTopSecretBackgroundColor: rgba(255, 140, 0);
+$classificationSecretBackgroundColor: rgba(200, 16, 46);
+$classificationConfidentialBackgroundColor: rgba(0, 51, 160);
+$classificationControlledBackgroundColor: rgba(80, 43, 133);
+$classificationUnclassifiedBackgroundColor: rgba(0, 122, 51);
 
 .marking {
   font-weight: bold;
@@ -21,16 +21,17 @@ $classificationUnclassifiedBackgroundColor: rgba(0,122,51);
   user-select: none;
 }
 
-.warning-message, .invalid-classification-message {
+.warning-message,
+.invalid-classification-message {
   text-align: center;
   button {
     margin: 1em 0em;
     color: #fff;
     background-color: #d83933;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     font-weight: 700;
-    margin-right: .5rem;
-    padding: .75rem 1.25rem;
+    margin-right: 0.5rem;
+    padding: 0.75rem 1.25rem;
     text-align: center;
     text-decoration: none;
     border: none;
@@ -43,17 +44,17 @@ $classificationUnclassifiedBackgroundColor: rgba(0,122,51);
 
 .tag {
   display: inline-block;
-  padding: .25em 1em;
+  padding: 0.25em 1em;
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   color: #fff;
   background-color: #6c757d;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
 .strike {
@@ -72,12 +73,12 @@ $classificationUnclassifiedBackgroundColor: rgba(0,122,51);
 
 .TSSCI {
   background-color: $classificationTopSecretSCIBackgroundColor;
-  color: #000 !important; 
+  color: #000 !important;
 }
 
 .TS {
   background-color: $classificationTopSecretBackgroundColor;
-  color: #000 !important; 
+  color: #000 !important;
 }
 
 .S {

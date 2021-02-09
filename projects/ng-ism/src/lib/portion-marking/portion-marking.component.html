@@ -1,12 +1,13 @@
 <div class="ng-ism">
-  <p [ngClass]="{'warning': (!textCleared || invalidClassification) && warn}">
+  <p [ngClass]="{ warning: (!textCleared || invalidClassification) && warn }">
     <span
       class="marking"
       [className]="tag ? classification : ''"
       title="This information is marked as {{ classificationShort }}{{ disseminationParsed }}."
-      [ngClass]="{'warning': (!textCleared || invalidClassification) && warn, 'strike': isDeclassified, 'tag': tag }"
+      [ngClass]="{ warning: (!textCleared || invalidClassification) && warn, strike: isDeclassified, tag: tag }"
     >
-      ({{ classification }}<span *ngIf="dissemination">//{{ dissemination }}</span>)
+      ({{ classification }}<span *ngIf="dissemination">//{{ dissemination }}</span
+      >)
     </span>
     {{ text }}
     <span
@@ -14,17 +15,19 @@
       class="marking"
       [className]="tag ? classification : ''"
       title="This information is marked as {{ classificationShort }}{{ disseminationParsed }}."
-      [ngClass]="{'strike': isDeclassified, 'tag': tag}"
+      [ngClass]="{ strike: isDeclassified, tag: tag }"
     >
-      ({{ classification }}<span *ngIf="dissemination">//{{ dissemination }}</span>)
+      ({{ classification }}<span *ngIf="dissemination">//{{ dissemination }}</span
+      >)
     </span>
   </p>
   <div class="warning-message" *ngIf="!textCleared && warn">
-    This text was flagged because may contain text that contradicts the overarching portion marking.  Please ensure this text is marked correctly.<br />
+    This text was flagged because may contain text that contradicts the overarching portion marking. Please ensure this
+    text is marked correctly.<br />
     <button class="ism-button" (click)="showText()">Acknowledge, and show text.</button>
   </div>
   <div class="invalid-classification-message" *ngIf="invalidClassification && warn">
-    The classification provided for this portion is not valid.  Please ensure the text is marked properly.<br />
+    The classification provided for this portion is not valid. Please ensure the text is marked properly.<br />
     <button class="ism-button" (click)="showText()">Acknowledge, and show text.</button>
   </div>
 </div>

@@ -4,9 +4,7 @@ import { ImageComponent } from './image.component';
 
 @NgModule({
   declarations: [ImageComponent],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [ImageComponent],
 })
-export class ImageModule { }
+export class ImageModule {}

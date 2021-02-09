@@ -4,9 +4,7 @@ import { PortionMarkingComponent } from './portion-marking.component';
 
 @NgModule({
   declarations: [PortionMarkingComponent],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [PortionMarkingComponent],
 })
-export class PortionMarkingModule { }
+export class PortionMarkingModule {}

@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'ism-portion-marking',
   templateUrl: './portion-marking.component.html',
-  styleUrls: ['./portion-marking.component.scss']
+  styleUrls: ['./portion-marking.component.scss'],
 })
 export class PortionMarkingComponent implements OnInit {
   @Input() text: string;
@@ -25,10 +25,10 @@ export class PortionMarkingComponent implements OnInit {
     S: ['TS//'],
     TS: [],
     CUI: [],
-    'TS//SCI': []
+    'TS//SCI': [],
   };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.textCleared = this.checkText(this.text, this.classification);
@@ -38,25 +38,25 @@ export class PortionMarkingComponent implements OnInit {
 
   checkText = (text, classification) => {
     let textCleared = true;
-    if (!this.hitList[classification]){
+    if (!this.hitList[classification]) {
       this.invalidClassification = true;
     } else {
-      this.hitList[classification].forEach(overclass => {
+      this.hitList[classification].forEach((overclass) => {
         if (text.includes(overclass)) {
           textCleared = false;
         }
       });
     }
     return textCleared;
-  }
+  };
 
   showText = () => {
     this.textCleared = true;
     this.invalidClassification = false;
-  }
+  };
 
   deriveClassification = (classification) => {
-    switch(classification) {
+    switch (classification) {
       case 'U':
         return 'UNCLASSIFIED';
       case 'R':
@@ -72,13 +72,13 @@ export class PortionMarkingComponent implements OnInit {
       default:
         return classification;
     }
-  }
+  };
 
   controlLookup = (control) => {
     if (control.includes('REL TO')) {
       return 'RELEASABLE TO ' + control.substring(7);
     } else {
-      switch(control) {
+      switch (control) {
         case 'FOUO':
           return 'FOR OFFICIAL USE ONLY';
         case 'RELIDO':
@@ -93,18 +93,17 @@ export class PortionMarkingComponent implements OnInit {
           return control;
       }
     }
-  }
+  };
 
   parseDissemination = (dissemination) => {
     const controlArray = [];
     const breakClass = dissemination.split('//');
-    breakClass.forEach(classification => {
+    breakClass.forEach((classification) => {
       const breakControl = classification.split('/');
-      breakControl.forEach(control => {
+      breakControl.forEach((control) => {
         controlArray.push(this.controlLookup(control));
       });
     });
     return controlArray[0] !== '' ? ' and is ' + controlArray.join(', ') : '';
-  }
-
+  };
 }
