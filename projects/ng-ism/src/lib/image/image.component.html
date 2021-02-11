@@ -1,10 +1,26 @@
-<div class="container">
-  <img [attr.src]="src" alt="Snow" style="width: 100%" />
-  <div *ngIf="position.includes('bottomLeft')" class="bottom-left">{{ bannerText }}</div>
-  <div *ngIf="position.includes('topLeft')" class="top-left">{{ bannerText }}</div>
-  <div *ngIf="position.includes('topRight')" class="top-right">{{ bannerText }}</div>
-  <div *ngIf="position.includes('bottomRight')" class="bottom-right">{{ bannerText }}</div>
-  <div *ngIf="position.includes('centered')" class="centered">{{ bannerText }}</div>
-  <div *ngIf="position.includes('topCentered')" class="top-centered">{{ bannerText }}</div>
-  <div *ngIf="position.includes('bottomCentered')" class="bottom-centered">{{ bannerText }}</div>
+<div class="container" [style.width.px]="width ? width : null" [style.height.px]="height ? height : null">
+  <img [attr.src]="src" [attr.alt]="bannerText" [attr.title]="bannerText" />
+
+  <div
+    [ngClass]="{
+      'bottom-left': position === 'bottomLeft',
+      'top-left': position === 'topLeft',
+      'top-right': position === 'topRight',
+      'bottom-right': position === 'bottomRight',
+      centered: position === 'centered',
+      'top-centered': position === 'topCentered',
+      'bottom-centered': position === 'bottomCentered'
+    }"
+  >
+    {{ bannerText }}
+  </div>
+
+  <!-- TODO: I'm sure there is a better way to write this with *ngFor
+  <div *ngIf="positions.includes('bottomLeft')" class="bottom-left">{{ bannerText }}</div>
+  <div *ngIf="positions.includes('topLeft')" class="top-left">{{ bannerText }}</div>
+  <div *ngIf="positions.includes('topRight')" class="top-right">{{ bannerText }}</div>
+  <div *ngIf="positions.includes('bottomRight')" class="bottom-right">{{ bannerText }}</div>
+  <div *ngIf="positions.includes('centered')" class="centered">{{ bannerText }}</div>
+  <div *ngIf="positions.includes('topCentered')" class="top-centered">{{ bannerText }}</div>
+  <div *ngIf="positions.includes('bottomCentered')" class="bottom-centered">{{ bannerText }}</div> -->
 </div>

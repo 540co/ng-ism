@@ -6,16 +6,10 @@ import { AppComponent } from './app.component';
 import { NgIsmModule } from 'ng-ism';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgIsmModule
- ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, NgIsmModule],
   providers: [],
   bootstrap: [AppComponent],
-  exports:  [],
+  exports: [],
 })
-export class AppModule { }
+export class AppModule {}

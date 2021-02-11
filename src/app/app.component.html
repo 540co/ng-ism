@@ -1,99 +1,71 @@
 <div class="app-container">
   <section>
     <h1>Example Portion Markings</h1>
-  
+
+    <ism-portion-marking text="Example text with invalid classification" classification="X" warn="true">
+    </ism-portion-marking>
+
+    <ism-portion-marking text="Example text with over classification TS//" classification="U" warn="true">
+    </ism-portion-marking>
+
+    <ism-portion-marking text="Example text this is sensitive" classification="U" warn="true"> </ism-portion-marking>
+
     <ism-portion-marking
-    text="Example text with invalid classification"
-    classification="X"
-    warn="true"
+      text="Example text with dissemination controls"
+      classification="U"
+      warn="true"
+      dissemination="FOUO"
     >
     </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text with over classification TS//"
-    classification="U"
-    warn="true"
+      text="Example text with declassified markings"
+      classification="U"
+      warn="true"
+      dissemination="FOUO"
+      isDeclassified="true"
     >
     </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text this is sensitive"
-    classification="U"
-    warn="true"
+      text="Example text with markings as tags"
+      classification="U"
+      warn="true"
+      dissemination="FOUO"
+      tag="true"
     >
     </ism-portion-marking>
-  
-    <ism-portion-marking
-    text="Example text with dissemination controls"
-    classification="U"
-    warn="true"
-    dissemination="FOUO"
-    >
+
+    <ism-portion-marking text="Example text with markings as tags" classification="C" warn="true" tag="true">
     </ism-portion-marking>
-  
+
+    <ism-portion-marking text="Example text with markings as tags" classification="S" warn="true" tag="true">
+    </ism-portion-marking>
+
+    <ism-portion-marking text="Example text with markings as tags" classification="TS" warn="true" tag="true">
+    </ism-portion-marking>
+
     <ism-portion-marking
-    text="Example text with declassified markings"
-    classification="U"
-    warn="true"
-    dissemination="FOUO"
-    isDeclassified="true"
+      text="Example text with markings as tags and no wrap"
+      classification="CUI"
+      warn="true"
+      tag="true"
+      [wrapped]="false"
     >
     </ism-portion-marking>
 
     <ism-portion-marking
-    text="Example text with markings as tags"
-    classification="U"
-    warn="true"
-    dissemination="FOUO"
-    tag="true"
-    >
-    </ism-portion-marking>
-
-    <ism-portion-marking
-    text="Example text with markings as tags"
-    classification="C"
-    warn="true"
-    tag="true"
-    >
-    </ism-portion-marking>
-
-    <ism-portion-marking
-    text="Example text with markings as tags"
-    classification="S"
-    warn="true"
-    tag="true"
-    >
-    </ism-portion-marking>
-
-    <ism-portion-marking
-    text="Example text with markings as tags"
-    classification="TS"
-    warn="true"
-    tag="true"
-    >
-    </ism-portion-marking>
-
-    <ism-portion-marking
-    text="Example text with markings as tags and no wrap"
-    classification="CUI"
-    warn="true"
-    tag="true"
-    [wrapped]="false"
-    >
-    </ism-portion-marking>
-
-    <ism-portion-marking
-    text="Example text with markings as tags and no wrap"
-    classification="TS//SCI"
-    warn="true"
-    tag="true"
-    [wrapped]="false"
+      text="Example text with markings as tags and no wrap"
+      classification="TS//SCI"
+      warn="true"
+      tag="true"
+      [wrapped]="false"
     >
     </ism-portion-marking>
   </section>
   <section>
     <h1>Example Banner Lines</h1>
-    
+
     <ism-banner-line classification="unclassified" fixedPosition="top"></ism-banner-line>
     <ism-banner-line classification="unclassified" fixedPosition="bottom"></ism-banner-line>
 
@@ -108,11 +80,26 @@
 
   <section>
     <h1>Example Images</h1>
-    
+
     <div class="image-container">
-      <ism-image class="image" src="https://media.socastsrm.com/wordpress/wp-content/blogs.dir/835/files/2019/03/Big-Foot-927387.jpg" classification="unclassified" position="bottomCentered"></ism-image>
-      <ism-image class="image" src="https://cdn.images.express.co.uk/img/dynamic/80/590x/ATLANTIS-may-have-been-uncovered-and-it-was-hiding-off-the-coast-of-Britain-all-along-according-to-the-claims-of-a-historian-1228892.webp?r=1579206218048" classification="unclassified" position="topLeft"></ism-image>
-      <ism-image class="image" src="https://s01.sgp1.cdn.digitaloceanspaces.com/article/123997-njkqfcwqje-1563359614.jpeg" classification="topsecret" [position]="['bottomCentered', 'topCentered']" [controls]="['FOUO']"></ism-image>
+      <ism-image
+        src="https://media.socastsrm.com/wordpress/wp-content/blogs.dir/835/files/2019/03/Big-Foot-927387.jpg"
+        classification="unclassified"
+        position="bottomCentered"
+      ></ism-image>
+      <ism-image
+        src="https://cdn.images.express.co.uk/img/dynamic/80/590x/ATLANTIS-may-have-been-uncovered-and-it-was-hiding-off-the-coast-of-Britain-all-along-according-to-the-claims-of-a-historian-1228892.webp?r=1579206218048"
+        classification="unclassified"
+        position="topLeft"
+        width="300"
+      ></ism-image>
+      <ism-image
+        src="https://s01.sgp1.cdn.digitaloceanspaces.com/article/123997-njkqfcwqje-1563359614.jpeg"
+        classification="topsecret"
+        position="topCentered"
+        [controls]="['FOUO']"
+        width="400"
+      ></ism-image>
     </div>
   </section>
 </div>

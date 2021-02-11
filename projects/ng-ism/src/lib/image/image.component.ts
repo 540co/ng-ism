@@ -8,17 +8,19 @@ import { deriveClassification, formatBannerText } from './../core/utils';
 })
 export class ImageComponent implements OnInit {
   @Input() src: string;
-  @Input() position: (
+  @Input() width: number;
+  @Input() height: number;
+  @Input() alt: string;
+  @Input() classification: string;
+  @Input() controls?: string[] = [];
+  @Input() position:
     | 'centered'
     | 'bottomLeft'
     | 'bottomRight'
     | 'topLeft'
     | 'topRight'
     | 'bottomCentered'
-    | 'topCentered'
-  )[] = [];
-  @Input() classification: string;
-  @Input() controls?: string[] = [];
+    | 'topCentered';
 
   bannerText = '';
 
