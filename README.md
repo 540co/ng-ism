@@ -1,4 +1,8 @@
+![ng-ism]('./../.assets/ng-ism.png)
+
 # ng-ism
+
+![npm](https://img.shields.io/npm/v/ng-ism?color=226BD6&style=for-the-badge)
 
 This library was designed to help increase the integrity of classification and control markings that are required for digital products created for government clients who interact with classified or controlled information in Angular projects.
 
