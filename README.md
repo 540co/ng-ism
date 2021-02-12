@@ -106,8 +106,7 @@ An image represents an image that is marked to clearly convey the level of class
 | alt | `string`  | `-` | Set image alt attribute. |
 | width | `number`  | `-` | Set image container width. |
 | height | `number`  | `-` | Set image container height. |
-
-| position |`string` | `-`  | Set the position of the classification/controls on the image. It can be either `centered`, `bottomLeft`, `bottomRight`, `topLeft`, `topRight`, `bottomCentered`, or `topCentered` |
+| position |`string` | `-` | Set the position of the classification/controls on the image. It can be either `centered`, `bottomLeft`, `bottomRight`, `topLeft`, `topRight`, `bottomCentered`, or `topCentered` |
 | classification | `string` |  `-` | Set the classification of the image. It can be either `controlled`, `unclassified`, `restricted`, `confidential`, `secret`, `topsecret`, or `topsecretsci` |
 | [controls] | `Array<string>` | `-` | Set the dissemination controls of image |
 
