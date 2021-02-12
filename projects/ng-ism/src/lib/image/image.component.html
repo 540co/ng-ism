@@ -1,7 +1,7 @@
-<div class="container" [style.width.px]="width ? width : null" [style.height.px]="height ? height : null">
-  <img [attr.src]="src" [attr.alt]="bannerText" [attr.title]="bannerText" />
-
+<div class="ism-image-container" [style.width.px]="width ? width : null" [style.height.px]="height ? height : null">
+  <img class="ism-image" [attr.src]="src" [attr.alt]="alt ? alt : bannerText" [attr.title]="bannerText" />
   <div
+    class="classification-text"
     [ngClass]="{
       'bottom-left': position === 'bottomLeft',
       'top-left': position === 'topLeft',
@@ -14,13 +14,4 @@
   >
     {{ bannerText }}
   </div>
-
-  <!-- TODO: I'm sure there is a better way to write this with *ngFor
-  <div *ngIf="positions.includes('bottomLeft')" class="bottom-left">{{ bannerText }}</div>
-  <div *ngIf="positions.includes('topLeft')" class="top-left">{{ bannerText }}</div>
-  <div *ngIf="positions.includes('topRight')" class="top-right">{{ bannerText }}</div>
-  <div *ngIf="positions.includes('bottomRight')" class="bottom-right">{{ bannerText }}</div>
-  <div *ngIf="positions.includes('centered')" class="centered">{{ bannerText }}</div>
-  <div *ngIf="positions.includes('topCentered')" class="top-centered">{{ bannerText }}</div>
-  <div *ngIf="positions.includes('bottomCentered')" class="bottom-centered">{{ bannerText }}</div> -->
 </div>
